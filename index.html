@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#064626">
+  <meta name="description" content="منوی دیجیتال رستوران فودلب؛ صبحانه، ساندویچ، پیش‌غذا، کافه و نوشیدنی">
+  <title>منوی دیجیتال فودلب | FoodLab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script defer src="menu.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="FoodLab خانه">
+      <span class="brand-name">Food<span>Lab</span><i>⚗</i></span>
+      <small>منوی دیجیتال</small>
+    </a>
+    <a class="menu-jump" href="#categories"><span aria-hidden="true">☰</span> منو</a>
+    <p class="header-slogan">خوب شروع کن<br>و خوب ادامه بده <b>⌁</b></p>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="معرفی رستوران فودلب">
+      <div class="hero-copy">
+        <span class="eyebrow">طعم خوب، حال خوب</span>
+        <h1>رستوران <strong>فودلب</strong></h1>
+        <p>تجربه‌ای لذیذ در کنار شما...</p>
+        <span class="hero-swish" aria-hidden="true"></span>
+      </div>
+    </section>
+
+    <section id="categories" class="categories" aria-label="دسته‌بندی‌های منو">
+      <div id="tabs" class="category-grid"></div>
+    </section>
+
+    <section class="menu-section" aria-live="polite">
+      <div class="section-title-wrap">
+        <span class="title-line"></span>
+        <span class="leaf-mark" aria-hidden="true">❧</span>
+        <h2 id="heading">صبحانه</h2>
+        <span class="leaf-mark leaf-flip" aria-hidden="true">❧</span>
+        <span class="title-line"></span>
+      </div>
+      <p id="status" class="status" role="status"></p>
+      <div id="items" class="product-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><span>Food<span>Lab</span></span><small>لذت خوب غذا</small></div>
+    <p>با ما در ارتباط باشید <b>♡</b></p>
+  </footer>
+</body>
+</html>
