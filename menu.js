@@ -8,13 +8,13 @@
  ];
  const seed=[
   ['breakfast','نیمرو'],['breakfast','املت'],['breakfast','سوسیس تخم‌مرغ'],['breakfast','عدسی'],['breakfast','لوبیا'],
-  ['sandwich','همبرگر دستی'],['sandwich','دوبل برگر'],['sandwich','ماشروم برگر'],['sandwich','رویال برگر'],['sandwich','هات‌داگ'],['sandwich','هات‌داگ رویال'],['sandwich','کوکتل'],['sandwich','کوکتل پنیر'],['sandwich','کوکتل دودی'],['sandwich','باقالی'],['sandwich','بندری'],['sandwich','فیله مرغ'],['sandwich','ژامبون مرغ'],['sandwich','ژامبون گوشت'],
+  ['sandwich','همبرگر دستی'],['sandwich','دوبل برگر'],['sandwich','ماشروم برگر'],['sandwich','رویال برگر'],['sandwich','هات‌داگ'],['sandwich','هات‌داگ رویال'],['sandwich','کوکتل'],['sandwich','کوکتل پنیر'],['sandwich','کوکتل دودی'],['sandwich','بلغاری'],['sandwich','بندری'],['sandwich','فیله مرغ'],['sandwich','ژامبون مرغ'],['sandwich','ژامبون گوشت'],
   ['appetizer','سیب‌زمینی ساده'],['appetizer','سیب‌زمینی ویژه'],
   ['cafe','اسپرسو تک'],['cafe','اسپرسو دوبل'],['cafe','چای ماسالا'],['cafe','چای سیاه'],['cafe','هات‌چاکلت'],['cafe','آمریکانو'],['cafe','کاپوچینو'],['cafe','ریسترتو'],['cafe','کیک'],
   ['drinks','لیموناد'],['drinks','نوشابه بطری'],['drinks','نوشابه قوطی'],['drinks','نوشابه شیشه‌ای'],['drinks','آب معدنی']
  ].map((x,i)=>({id:'demo'+i,category_id:x[0],name:x[1],description:'',price:null,active:true,sort_order:i}));
  let chosen='breakfast',products=seed;
- const c=window.FOODLAB_CONFIG||{};
+ const c=window.FOODLAB_CONFIG||{};  
  const configured=c.SUPABASE_URL&&!c.SUPABASE_URL.includes('YOUR-')&&c.SUPABASE_ANON_KEY&&!c.SUPABASE_ANON_KEY.includes('YOUR_');
  const db=configured&&window.supabase?window.supabase.createClient(c.SUPABASE_URL,c.SUPABASE_ANON_KEY):null;
  const tabs=document.querySelector('#tabs'),items=document.querySelector('#items');
