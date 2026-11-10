@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
- <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
- <title>ورود مدیر | FoodLab</title>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+ <title>مدیریت محصولات | FoodLab</title>
  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="style.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="config.js"></script><script defer src="admin.js"></script>
@@ -11,12 +11,23 @@
  <header class="admin-header"><a class="brand" href="index.html"><span class="brand-name">Food<span>Lab</span></span><small>ناحیه مدیریت</small></a><a class="admin-back" href="index.html">← بازگشت به منو</a></header>
  <main class="adminmain">
   <section id="login" class="admin-card">
-   <div class="admin-intro"><span class="admin-kicker">FOODLAB · PRIVATE</span><h1>ورود مدیر</h1><p>این بخش فقط برای مدیریت و به‌روزرسانی قیمت‌های منو است.</p></div>
+   <div class="admin-intro"><span class="admin-kicker">FOODLAB · PRIVATE</span><h1>ورود مدیر</h1><p>مدیریت نام، قیمت و دسته‌بندی محصولات منو.</p></div>
    <form id="loginform" class="admin-form"><label>ایمیل مدیر<input id="email" type="email" autocomplete="username" required placeholder="ایمیل حساب مدیر"></label><label>رمز عبور<input id="password" type="password" autocomplete="current-password" required placeholder="رمز عبور"></label><button class="admin-button" type="submit">ورود به مدیریت</button></form>
    <p id="loginmsg" class="admin-message" role="status"></p>
   </section>
   <section id="manager" class="admin-card hidden">
-   <div class="managerhead"><div class="admin-intro"><span class="admin-kicker">PRICE CONTROL</span><h1>مدیریت قیمت‌ها</h1><p>قیمت‌ها را به تومان وارد کن و ذخیره را بزن.</p></div><button id="logout" class="admin-button" type="button">خروج</button></div>
+   <div class="managerhead"><div class="admin-intro"><span class="admin-kicker">PRODUCT CONTROL</span><h1>مدیریت محصولات</h1><p>محصول جدید اضافه کن یا نام، قیمت و دسته‌بندی محصولات را ویرایش کن.</p></div><button id="logout" class="admin-button" type="button">خروج</button></div>
+   <section class="add-product">
+    <h2>افزودن محصول جدید</h2>
+    <form id="addform" class="admin-form">
+     <label>نام محصول<input id="newname" type="text" maxlength="150" required placeholder="مثلاً برگر مخصوص"></label>
+     <label>دسته‌بندی<select id="newcategory" required><option value="breakfast">صبحانه</option><option value="sandwich">ساندویچ</option><option value="appetizer">پیش‌غذا</option><option value="cafe">کافه</option><option value="drinks">نوشیدنی</option></select></label>
+     <label>قیمت به تومان<input id="newprice" type="number" min="0" step="1" placeholder="خالی بگذار تا بعداً وارد کنی"></label>
+     <label>توضیحات (اختیاری)<input id="newdescription" type="text" maxlength="500" placeholder="توضیح کوتاه محصول"></label>
+     <button id="addbutton" class="admin-button" type="submit">افزودن محصول</button>
+    </form>
+    <p id="addmsg" class="admin-message" role="status"></p>
+   </section>
    <div class="admin-tools"><input id="search" class="admin-search" type="search" placeholder="جست‌وجوی نام محصول"><select id="filter" class="admin-filter"><option value="all">همه دسته‌ها</option><option value="breakfast">صبحانه</option><option value="sandwich">ساندویچ</option><option value="appetizer">پیش‌غذا</option><option value="cafe">کافه</option><option value="drinks">نوشیدنی</option></select></div>
    <p id="msg" class="admin-message" role="status"></p><div id="rows"></div>
   </section>
