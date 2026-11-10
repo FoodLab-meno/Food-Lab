@@ -29,17 +29,17 @@ for select to anon, authenticated using (active = true);
 
 create policy "Only owner can read all products" on public.products
 for select to authenticated
-using (auth.uid() = 'PASTE_ADMIN_USER_ID_HERE'::uuid);
+using (auth.uid() = '6a8e56d1-39a5-4e59-9bce-4c9571a57b43'::uuid);
 
 -- فقط مدیر مجاز به افزودن و ویرایش محصول است.
 create policy "Only owner can insert products" on public.products
 for insert to authenticated
-with check (auth.uid() = 'PASTE_ADMIN_USER_ID_HERE'::uuid);
+with check (auth.uid() = '6a8e56d1-39a5-4e59-9bce-4c9571a57b43'::uuid);
 
 create policy "Only owner can update products" on public.products
 for update to authenticated
-using (auth.uid() = 'PASTE_ADMIN_USER_ID_HERE'::uuid)
-with check (auth.uid() = 'PASTE_ADMIN_USER_ID_HERE'::uuid);
+using (auth.uid() = '6a8e56d1-39a5-4e59-9bce-4c9571a57b43'::uuid)
+with check (auth.uid() = '6a8e56d1-39a5-4e59-9bce-4c9571a57b43'::uuid);
 
 -- محصولات اولیه فقط در صورتی درج می‌شوند که قبلاً با همان نام و دسته ثبت نشده باشند.
 insert into public.products(category_id,name,price,sort_order)
